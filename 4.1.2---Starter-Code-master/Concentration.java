@@ -17,38 +17,25 @@ public class Concentration extends Board
 {
     public static final int CONCENTRATION = 100;
     public static final int SEVENS = 200;
-
-    // create the game board
     private Tile[][] gameboard = makeBoard();
-    // set the game rules
     private int gamerules;
-    // uncomment to play SEVENS:
-    // private int gamerules = Board.SEVENS;
 
     /**
      * The constructor for the game. Creates the 2-dim gameboard
      * by populating it with tiles.
      */
     public Concentration() {
-
-        // get pairs of cards
         String[] cards = getCards();
         int numCards = cards.length-1;
 
         gamerules = CONCENTRATION;
 
-        // randomly assing cards to game tiles
         for (int i = 0; i < gameboard.length; i++) {
-            for (int j = 0; j < gameboard[0].length; j++)    {
-                // choose random card
+            for (int j = 0; j < gameboard[0].length; j++)
+            {
                 int r = (int)( Math.random() * numCards);
-
-                // assing card to tile
                 gameboard[i][j] = new Tile(cards[r]);
-
-                // update random number helper array, replacing used card with last card of deck
                 cards[r] = cards[numCards];
-                // manually track the cards remaining in array
                 numCards--;
             }
         }
@@ -115,7 +102,8 @@ public class Concentration extends Board
      * @param row the row value of Tile
      * @param column the column value of Tile
      */
-    public void showFaceUp (int row, int column) {
+    public void showFaceUp (int row, int column)
+    {
         Tile tile = gameboard[row][column];
         tile.faceUp(true);
         tile.faceUp(true);
@@ -155,7 +143,7 @@ public class Concentration extends Board
     public boolean validSelection(int i, int j) {
         if (i < gameboard.length) {
             if (j < gameboard[0].length) {
-                if (!gameboard[i][j].matched()) return true;
+                if(!gameboard[i][j].matched()) return true;
             }
         }
         return false;

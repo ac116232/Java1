@@ -43,7 +43,8 @@ public class Tile
      *
      * @return the face up String value of the card
      */
-    public String getFace() {
+    public String getFace()
+    {
         return cardFace;
     }
 
@@ -52,7 +53,8 @@ public class Tile
      *
      * @return the face (as a String value)
      */
-    public String getBack() {
+    public String getBack()
+    {
         return cardBack;
     }
 
@@ -72,7 +74,8 @@ public class Tile
      *
      * @reutrn true if the card is currently in the faceUp state, false otherwise
      */
-    public boolean isFaceUp() {
+    public boolean isFaceUp()
+    {
         return faceUp;
     }
 
@@ -80,7 +83,8 @@ public class Tile
      * A matching pair of cards has been found, set matched to true
      * and change the way the card is shown
      */
-    public void foundMatch() {
+    public void foundMatch()
+    {
         matched = true;
         cardFace = cardMatched;
         cardBack = cardMatched;
@@ -91,7 +95,8 @@ public class Tile
      *
      * @return true of the card was previously matched, false otherwise
      */
-    public boolean matched() {
+    public boolean matched()
+    {
         return matched;
     }
 
@@ -116,7 +121,8 @@ public class Tile
      * @return true if the match, false otherwise
      */
     public boolean equals(Tile tile) {
-        if (this.cardFace.equals(tile.cardFace) )return true;
+        if (this.cardFace.equals(tile.cardFace))
+            return true;
         else return false;
     }
 
