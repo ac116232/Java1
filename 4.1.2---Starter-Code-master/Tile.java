@@ -9,64 +9,28 @@ public class Tile
     private String cardFace;
     private String cardBack = "_____";
     private String cardMatched = "  *  ";
-
-    /**
-     * Construct a tile with a string value. The default state
-     * of a tile is unmatched and face down on the board.
-     *
-     * @param  word the word that represents the card face
-     */
     public Tile(String word)
     {
         cardFace = word;
     }
 
-
-    /**
-     * Return the String value of the tile in its face up state
-     *
-     * @return the face up String value of the card
-     */
     public String getFace()
     {
         return cardFace;
     }
-
-    /**
-     * Return the  value of the tile in its face down state
-     *
-     * @return the face (as a String value)
-     */
     public String getBack()
     {
         return cardBack;
     }
-
-
-    /**
-     * Set the card to either a face up or face down state
-     *
-     * @param b true to show the card face up, false to show face down
-     */
     public void faceUp(boolean b)
     {
         faceUp = b;
     }
-
-    /**
-     * Determine if the card is currently face up
-     *
-     * @reutrn true if the card is currently in the faceUp state, false otherwise
-     */
     public boolean faceUp()
     {
         return faceUp;
     }
 
-    /**
-     * A matching pair of cards has been found, set matched to true
-     * and change the way the card is shown
-     */
     public void foundMatch()
     {
         matched = true;
@@ -74,36 +38,17 @@ public class Tile
         cardBack = cardMatched;
     }
 
-    /**
-     * Determine if this tile has been matched
-     *
-     * @return true of the card was previously matched, false otherwise
-     */
     public boolean matched()
     {
         return matched;
     }
 
-
-    /**
-     * Deteremines if two cards are the same according the Sevens rules: the card faces add to 7.
-     *
-     * @param tile the tile to compare this tile to
-     * @param rules the rules to play by, "concentration" or "sevens"
-     */
     public boolean addsTo7(Tile tile) {
         int a = Integer.parseInt(this.cardFace);
         int b = Integer.parseInt(tile.cardFace);
         if ( a + b == 7) return true;
         else return false;
     }
-
-    /**
-     * Determines if two cards are considered the same
-     *
-     * @param the tile to check for a match to this tile
-     * @return true if the match, false otherwise
-     */
     public boolean equals(Tile tile) {
         if (this.cardFace.equals(tile.cardFace))
             return true;
