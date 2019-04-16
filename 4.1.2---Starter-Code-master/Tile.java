@@ -1,23 +1,7 @@
 import java.util.Random;
 import java.util.ArrayList;
 
-/**
- * A tile in the game of Concentration, i
- * Tiles are arranged on an n x m board, represented in a 2-dim array
- *
- * In this version, a tile contains a card, similar to a playing card. Cards
- * have string values for their "face up" and "face down" state. Each tile
- * is shown face up or face down on the board.
- *
- * A tile can also have a "cardMatched", indicateing the card has been matched
- * with another card and has been removed from the board. We use this value 
- * instead of a blank value or a missing tile because it helps to represent
- * the m x n game board when tiles would otherwise be blank or missing.
- */
 
-/**
- * Solution Version
- */
 public class Tile
 {
     private boolean faceUp;
@@ -74,7 +58,7 @@ public class Tile
      *
      * @reutrn true if the card is currently in the faceUp state, false otherwise
      */
-    public boolean isFaceUp()
+    public boolean faceUp()
     {
         return faceUp;
     }
