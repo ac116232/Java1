@@ -1,23 +1,26 @@
 package animals;
 
 
+import types.Primate;
+
 /**
  * Write a description of class animals.Alligator here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Alligator
+public class Alligator extends Primate
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private String age;
 
     /**
      * Constructor for objects of class animals.Alligator
      */
     public Alligator()
     {
-
+        super("animals.Alligator", "brown and sometimes mean");
+        this.age = "very young";
     }
 
     /**
@@ -25,7 +28,10 @@ public class Alligator
      *
      *
      */
-
-
-
+    @Override
+    public String makeNoise()
+    {
+        // put your code here
+        return "screetches and throws feces.";
+    }
 }
